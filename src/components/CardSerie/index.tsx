@@ -14,14 +14,14 @@ export default function CardSerie({serie}: CardSerieProps) {
                 <Image
                     className="card-image"
                     src={`https://image.tmdb.org/t/p/original${serie.poster_path}`}  
-                    alt={`${serie.title}`}  
+                    alt={`${serie.name}`}  
                     width={500} 
                     height={700}
                     layout='intrinsic'
                 />
             </div>
             <div className='card-infos'>
-                <p className='card-title'> {serie.title} </p>  
+                <p className='card-title'> {serie.name} </p>  
 
                 {serie.vote_average > 0 &&  
                     <StarRating score={serie.vote_average} />  
