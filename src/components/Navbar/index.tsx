@@ -49,7 +49,7 @@ export default function Navbar () {
                 onMouseEnter={() => setIsHovered(true)} 
                 onMouseLeave={() => setIsHovered(false)}
             >
-              { isHovered ? <IoPersonCircleOutline /> : <IoPersonCircle />}
+              { isHovered ? <IoPersonCircle /> : <IoPersonCircleOutline /> }
             </button>
 
             <button className='btn-drop-resp' onClick={toggleMenu}>

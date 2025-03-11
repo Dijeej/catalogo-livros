@@ -1,0 +1,105 @@
+// Cores globais
+$color-title: #ffffff;
+$color-overview: #fde38f;
+$color-btn-default: #da6622;
+$color-btn-default-hover: #793711;
+$background-color: #097674;
+
+.div-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 4rem);
+}
+
+
+.serie-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:flex-start;
+    color: $color-btn-default;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+
+    .serie-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .serie-name {
+            padding-bottom: .5rem;
+            padding-right: 9rem;
+            border-bottom: .2rem solid $background-color;
+            margin-bottom: .5rem;
+        }
+            
+        .serie-image {
+            flex: 2 1 24rem;
+            border-radius: 0.4rem;
+            overflow: hidden; 
+            box-shadow: 0rem .4rem .6rem rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: auto;
+            max-width: 24rem;
+        }
+        .serie-rating {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: $background-color;
+            color: $color-title;
+            border-radius: 0.2rem;
+            padding: 1rem;
+            width: 100%;
+            margin-top: 1rem;
+
+            .vote-avarege {
+                font-size: 1.3rem;
+                font-weight: bold;
+                margin: 0;
+            }
+        }
+    }
+
+    .serie-overview {
+        margin-top: 3rem;
+        flex: 2 1 31.25rem;
+        display: flex;
+        flex-direction: column;
+        color: $color-overview;
+        font-size: 1.2rem;
+        background-color: transparent;
+        gap: .2rem;
+        // justify-content: space-around;
+        // align-content: space-around;
+
+        .overview-card {
+            // flex: 2 1 31.25rem;
+            background-color: $background-color;
+            padding: 1.25rem;
+            border-radius: 0.2rem;
+            box-shadow: 0rem .4rem .6rem rgba(0, 0, 0, 0.2);
+            display: flex;
+            
+            flex-direction: column;
+            
+        
+            h1 {
+                font-size: 2.5rem;
+                color: $color-title;
+                margin: 0;
+            }
+        }
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+    .serie-container {
+        flex-direction: column;
+    }
+}

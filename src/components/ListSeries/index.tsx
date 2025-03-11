@@ -18,12 +18,14 @@ export default function SeriesList({ genreId }: { genreId?: number }) {
                 api_key: '2ad935aa5c1c020c4c3ba741aa80d09d', 
                 language: 'pt-BR',
             };
-
+            let url = '';
             if (genreId) {
                 params.with_genres = genreId;
+                url = 'https://api.themoviedb.org/3/discover/tv';
+            } else {
+                url = 'https://api.themoviedb.org/3/trending/tv/week'
             }
-
-            const response = await axios.get('https://api.themoviedb.org/3/discover/tv', { params });
+            const response = await axios.get(url, { params });
             
             setSeries(response.data.results);  
         } catch(error) {

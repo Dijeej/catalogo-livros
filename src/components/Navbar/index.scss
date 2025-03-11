@@ -48,7 +48,7 @@ $line-color: #004453;
 
                 &.active, &:hover {
                     color: $hover-color;
-                    border-bottom: 0.15rem solid $line-color;
+                    border-bottom: 0.15rem solid $title-color;
                 }
             }
         }
@@ -69,6 +69,7 @@ $line-color: #004453;
         border: none;
         background-color: transparent;
         font-size: 4rem;
+        cursor: pointer;
 
     }
 

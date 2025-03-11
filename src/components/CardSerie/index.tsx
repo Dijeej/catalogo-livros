@@ -1,6 +1,8 @@
+'use client'
 import { Serie } from '@/types/serie';
 import Image from 'next/image';
 import StarRating from '../StarRating';
+import { useRouter } from 'next/navigation';
 import './index.scss'
 
 interface CardSerieProps {  
@@ -8,6 +10,8 @@ interface CardSerieProps {
 }
 
 export default function CardSerie({serie}: CardSerieProps) { 
+    const router = useRouter();
+
     return (
         <li className='card-serie'>  
             <div className='card-poster'>
@@ -36,7 +40,7 @@ export default function CardSerie({serie}: CardSerieProps) {
                             } 
                         </p>
                     }
-                    <button className='btn-default'>Ver mais</button>
+                    <button className='btn-default' onClick={() => router.push(`/serie/${serie.id}`)} >Ver mais </button>
                 </div>
             </div>
         </li>

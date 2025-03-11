@@ -1,6 +1,7 @@
 $color-title: #ffffff;
 $color-overview: #fde38f;
 $color-btn-default: #da6622;
+$color-btn-default-hover: #793711;
 .card-serie {
     width: 100%;
     height: 100%;
@@ -48,6 +49,11 @@ $color-btn-default: #da6622;
                 padding: .3rem .5rem;
                 cursor: pointer;
                 width: 100%;
+
+                &:hover {
+                    background-color: $color-btn-default-hover;
+                    text-decoration: underline;
+                }
             }
         }
     }
