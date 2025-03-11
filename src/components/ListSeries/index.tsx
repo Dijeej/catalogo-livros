@@ -40,7 +40,7 @@ export default function SeriesList({ genreId }: { genreId?: number }) {
     if (isLoading) {
         return (
             <div className='div-loading'>
-                <PulseLoader color='#113582' size={20}/>
+                <PulseLoader color='#097674' size={20}/>
             </div>
         )
     }

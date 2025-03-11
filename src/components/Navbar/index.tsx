@@ -3,14 +3,23 @@ import Link from "next/link";
 import './index.scss'
 import { GiWitchFlight } from "react-icons/gi";
 import { useState } from "react";
-// import { usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { HiMiniBars4, HiMiniXCircle } from "react-icons/hi2";
 import { IoPersonCircle, IoPersonCircleOutline } from "react-icons/io5";
+import NavItem from "../NavItem";
+import { NavItemT } from "@/types/navItem";
+import { genreDic } from "@/utils/genreDic";
 
 export default function Navbar () {
-    // const pathname = usePathname();
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+
+    const navItens: NavItemT[] = Object.entries(genreDic).map(([id, { pt, en }]) => ({
+        id: parseInt(id),
+        namePt: pt,
+        nameEn: en,
+    }));
 
     const toggleMenu = () => {
         setIsOpen((prev) => !prev);
@@ -23,11 +32,17 @@ export default function Navbar () {
                 <p className="page-text">Witch TV</p> 
             </Link>
             <ul className={`nav-itens ${isOpen ? 'open' : ''}`}> 
-                <li>Início</li>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-                <li>Item 4</li>
+            <li className="nav-home">
+                    <Link className={`nav-link ${pathname === '/' ? 'active' : ''}`} href={'/'}>Início</Link>
+                </li>
+
+                {navItens.map((item) => (
+                    <NavItem 
+                    key={item.id} 
+                    navbarItem={item} 
+                    isActive={pathname === `/${item.nameEn}`}
+                    />
+                ))}
             </ul>
 
             <button className="btn-profile" 
