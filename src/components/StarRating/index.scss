@@ -1,0 +1,9 @@
+$star-color: #f8c007;
+.card-ranking {
+    display: flex;
+    gap: .5rem;
+
+    svg {
+        color: $star-color;
+    }
+}

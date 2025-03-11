@@ -1,0 +1,15 @@
+.div-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 4rem);
+}
+
+.list-series {
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(12.5rem, 1fr));
+    gap: 1rem;
+    list-style: none;
+    width: 100%;
+    padding: 2rem;
+}

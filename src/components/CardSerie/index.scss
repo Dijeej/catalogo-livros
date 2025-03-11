@@ -1,0 +1,74 @@
+$color-title: #ffffff;
+$color-overview: #fde38f;
+$color-btn-default: #da6622;
+.card-serie {
+    width: 100%;
+    height: 100%;
+    border-radius: .3rem;
+    overflow: hidden;
+    position: relative;
+
+    .card-poster .card-image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 1;
+    }
+
+    .card-infos {
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(rgba(0,0,0,0), rgb(0,0,0) 90%);
+        height: 12.5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: .625rem;
+        
+        .card-title {
+            font-size: .75rem;
+            color: $color-title;
+        }
+        .hidden-content {
+            color: $color-overview;
+            font-size: .75rem;
+            margin-top: .5rem;
+            height: 0rem;
+            opacity: 0;
+            transition: all .6s;
+
+            .btn-default {
+                border: none;
+                background-color: $color-btn-default;
+                font-size: .75rem;
+                margin-top: .5rem;
+                color: $color-title;
+                padding: .3rem .5rem;
+                cursor: pointer;
+                width: 100%;
+            }
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        .card-poster .card-image{
+            opacity: 0.5;
+        }
+
+        .hidden-content {
+            opacity: 1;
+            
+        }
+        .card-infos:has(.card-description) .hidden-content {
+            height: 6.25rem;
+        }
+        .card-infos:not(:has(.card-description)) .hidden-content {
+            height: 3.075rem;
+        }
+
+    }
+    
+}
