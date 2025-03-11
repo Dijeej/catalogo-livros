@@ -1,0 +1,14 @@
+// Color variables
+  $background: #00303b;
+  $foreground: #001517;
+
+// Base settings
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $background;
+}

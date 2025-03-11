@@ -1,0 +1,77 @@
+// Colors
+$background: #097674;
+$title-color: #d7d301;
+
+.navbar {
+    background-color: $background;
+    color: $title-color;
+    padding: 1.5rem 3%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0.4rem 0.4rem 0.4rem rgba($color: #000000, $alpha: 0.3); 
+    
+    .page-title {
+        text-decoration: none;
+        color: $title-color;
+
+        .page-icon {
+            font-size: 5rem;
+        }
+
+        .page-text {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+    .nav-itens {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: start;
+        list-style: none;
+
+        &.open {
+            flex-direction: column;
+            position: absolute;
+            top: 10rem;
+            left: 0;
+            width: 100%;
+            background-color: $background;
+            padding: 1.1rem;
+            z-index: 2; 
+        }
+    }
+    .btn-profile {
+        color: $title-color;
+        border: none;
+        background-color: transparent;
+        font-size: 4rem;
+
+    }
+
+    .btn-drop-resp {
+        display: none;
+        border: none;
+        color: $title-color;
+        background-color: transparent;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 48rem) {
+        .btn-drop-resp {
+            display: block;
+        }
+        .nav-itens {
+            display: none;
+
+            &.open {
+                display: flex;
+            }
+        }
+
+    }
+}
