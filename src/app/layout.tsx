@@ -1,22 +1,7 @@
 import type { Metadata } from "next";
-import { Lexend, Lexend_Deca } from "next/font/google";
+import { Lexend_Deca } from "next/font/google";
 import "./globals.scss";
 import Navbar from "@/components/Navbar";
-
-const lexend = Lexend({
-  subsets: ["latin"],
-  weight: [
-    "100",
-    "200",
-    "300",
-    "400",
-    "500",
-    "600",
-    "700",
-    "800",
-    "900"
-  ]
-});
 
 const lexendDeca = Lexend_Deca({
   subsets: ["latin"],
@@ -45,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend} ${lexendDeca}`}>
+      <body className={`${lexendDeca.className}`}>
         <Navbar />
         {children}
       </body>
